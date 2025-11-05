@@ -1,120 +1,125 @@
-# RAIX Website with Blog - Deployment Package
+# RAIX Website - Markdown Blog System
 
-Updated RAIX website now includes a fully functional blog section!
+Complete source code for the RAIX website with Markdown-based blog system.
 
-## What's New
+## 🚀 Quick Deploy to Netlify
 
-### Blog Features
-- **Blog Listing Page** (`/blog`) - Grid view of all blog posts
-- **Individual Post Pages** (`/blog/{post-id}`) - Full blog post content
-- **Search Functionality** - Search posts by title and content
-- **Category Filters** - Filter by Copilot Studio, Cybersecurity, AI & Automation
-- **LinkedIn Sharing** - Share posts directly to LinkedIn
-- **Comments Section** - Placeholder for future comment integration
+### Option 1: Connect to GitHub (Recommended)
 
-### Sample Blog Posts Included
-1. **Getting Started with Microsoft Copilot Studio** - Comprehensive guide for Australian businesses
-2. **Cybersecurity Essentials for Australian Businesses in 2025** - Best practices and Essential Eight framework
-3. **Automating Business Workflows with AI** - Practical examples and ROI insights
+1. **Push this code to your GitHub repository:**
+   ```bash
+   cd /path/to/raix-markdown-blog
+   git init
+   git add .
+   git commit -m "Initial commit with Markdown blog system"
+   git remote add origin https://github.com/soyroberto/raix.git
+   git branch -M main
+   git push -u origin main
+   ```
 
-## File Structure
+2. **Connect Netlify to GitHub:**
+   - Go to https://app.netlify.com
+   - Click "Add new site" → "Import an existing project"
+   - Choose "GitHub" and select your `raix` repository
+   - Netlify will auto-detect settings from `netlify.toml`
+   - Click "Deploy site"
+
+3. **Configure custom domain:**
+   - In Netlify dashboard → Domain settings
+   - Add `raix.au` as custom domain
+   - Update DNS as instructed
+
+### Option 2: Manual Deploy
+
+1. Build the site:
+   ```bash
+   pnpm install
+   pnpm build
+   ```
+
+2. Deploy `dist/public` folder to Netlify via drag-and-drop
+
+## 📝 Adding New Blog Posts
+
+See **[BLOG_GUIDE.md](BLOG_GUIDE.md)** for complete instructions.
+
+**Quick start:**
+1. Create a new `.md` file in `posts/` folder
+2. Use the template from `posts/_template.md`
+3. Commit and push to GitHub
+4. Netlify automatically builds and deploys
+
+## 📁 Project Structure
 
 ```
-raix-with-blog/
-├── index.html                      # Main website
-├── assets/
-│   ├── index-BbDnSrII.js          # JavaScript bundle (includes blog)
-│   ├── index-Cz79VI6j.css         # CSS styles
-│   ├── hero-image.png             # Hero illustration
-│   └── raix-logo.svg              # SVG logo
+raix-markdown-blog/
+├── posts/                          # Markdown blog posts
+│   ├── _template.md               # Blog post template
+│   ├── getting-started-copilot-studio.md
+│   ├── cybersecurity-essentials-2025.md
+│   └── ai-workflow-automation.md
+├── scripts/
+│   └── generate-posts.js          # Converts .md to JSON
+├── client/                         # React source code
+│   ├── src/
+│   │   ├── pages/
+│   │   │   ├── Home.tsx           # Homepage
+│   │   │   ├── Blog.tsx           # Blog listing
+│   │   │   └── BlogPost.tsx       # Individual post
+│   │   └── generated/
+│   │       └── posts.json         # Generated from .md files
+│   └── public/                     # Static assets
+├── package.json                    # Dependencies and scripts
+├── netlify.toml                    # Netlify configuration
+├── BLOG_GUIDE.md                   # Complete blogging guide
 └── README.md                       # This file
 ```
 
-## Deployment to Netlify
-
-### Quick Update (Recommended)
-
-1. **Go to your Netlify dashboard**: https://app.netlify.com
-2. **Find your site**: timely-hotteok-de187e
-3. **Click "Deploys"** tab
-4. **Drag and drop** the entire `raix-with-blog` folder into the deploy zone
-5. **Done!** Your blog will be live in seconds
-
-### Alternative: Git Deployment
-
-If you want to deploy via Git:
-
-1. **Update your repository**:
-   ```bash
-   cd raix-with-blog
-   git init
-   git add .
-   git commit -m "Add blog section with 3 sample posts"
-   git push origin main
-   ```
-
-2. **Netlify will auto-deploy** if connected to your repo
-
-## Testing Locally
+## 🛠️ Development
 
 ```bash
-# Using Python
-python3 -m http.server 8000
+# Install dependencies
+pnpm install
 
-# Using Node.js
-npx serve
+# Generate blog posts from Markdown
+npm run generate:posts
 
-# Then visit: http://localhost:8000
+# Start dev server
+pnpm dev
+
+# Build for production
+pnpm build
 ```
 
-## Blog Management
+## 📚 Documentation
 
-### Adding New Blog Posts
+- **[BLOG_GUIDE.md](BLOG_GUIDE.md)** - Complete guide for adding and managing blog posts
+- **[posts/_template.md](posts/_template.md)** - Blog post template with examples
 
-Currently, blog posts are hardcoded in the React components. To add new posts:
+## ✨ Features
 
-1. Edit `client/src/pages/Blog.tsx` - Add to `blogPosts` array
-2. Edit `client/src/pages/BlogPost.tsx` - Add to `blogPosts` object
-3. Rebuild: `pnpm build`
-4. Redeploy
+- ✅ Markdown-based blog posts
+- ✅ Automatic post generation
+- ✅ Search functionality
+- ✅ Category filtering
+- ✅ LinkedIn sharing
+- ✅ Working contact form (Web3Forms)
+- ✅ Responsive design
+- ✅ SEO-friendly
+- ✅ Auto-deployment via Netlify
 
-### Future: Markdown-Based Blog
+## 🔧 Technologies
 
-For easier blog management, consider:
-- **Headless CMS** (Contentful, Strapi, Sanity)
-- **Git-based CMS** (Netlify CMS, Decap CMS)
-- **Static Site Generator** (Next.js, Astro with Markdown)
+- **Frontend:** React 18, Vite 7, Tailwind CSS 4
+- **Blog System:** Markdown, gray-matter, marked
+- **Deployment:** Netlify
+- **Form:** Web3Forms
 
-## Comments Integration
+## 📞 Support
 
-The comments section is currently a placeholder. To add real comments:
-
-**Recommended Options:**
-- **Giscus** (GitHub Discussions-based, free)
-- **Disqus** (Popular, free tier available)
-- **Utterances** (GitHub Issues-based, lightweight)
-
-## Features Summary
-
-✅ **Blog Navigation** - Added to main header
-✅ **Search** - Real-time search across posts
-✅ **Categories** - Filter by topic
-✅ **LinkedIn Sharing** - One-click sharing
-✅ **Responsive Design** - Mobile-friendly
-✅ **SEO-Friendly** - Proper metadata and structure
-✅ **Author Attribution** - Posts by Roberto
-✅ **Reading Time** - Estimated time to read
-✅ **Back Navigation** - Easy return to blog listing
-
-## Contact Form
-
-The contact form still works with Web3Forms (API key: daac3f83-bef1-43b2-9d23-a632900aef97).
-
-## Support
-
-For questions or updates, contact Roberto via the website contact form.
+For questions or issues, refer to the [BLOG_GUIDE.md](BLOG_GUIDE.md) or contact Roberto.
 
 ---
 
-**Created by Manus AI** | Blog section added with full functionality!
+**Live Site:** https://raix.au
 
