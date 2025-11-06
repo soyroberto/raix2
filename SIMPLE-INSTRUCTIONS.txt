@@ -1,0 +1,46 @@
+RAIX BLOG - SIMPLE INSTRUCTIONS
+================================
+
+STEP 1: Add a blog post
+-----------------------
+Create a file in posts/ folder (e.g., posts/my-post.md)
+
+Example:
+---
+title: My Blog Post
+excerpt: Short description
+author: Roberto
+date: 2025-01-20
+category: Copilot Studio
+---
+
+# My Blog Post
+
+Your content here...
+
+
+STEP 2: Generate JSON
+---------------------
+Run this command:
+
+    python3 generate-posts.py
+
+You'll see:
+    🚀 RAIX Blog Post Generator
+    📝 Found X post(s)
+    ✅ Generated: assets/posts.json
+
+
+STEP 3: Deploy
+--------------
+Go to: https://app.netlify.com/sites/timely-hotteok-de187e/deploys
+Drag the entire raix-final folder
+Done!
+
+
+THAT'S IT!
+----------
+No build process, no errors, just works.
+
+Questions? See BLOG-WORKFLOW.md
+
