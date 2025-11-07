@@ -62,27 +62,34 @@ export default function Home() {
       <header className="sticky top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-white/20">
         <div className="container flex items-center justify-between py-4">
           <div className="flex items-center gap-2">
-            <div className="h-20 flex items-center">
+            <div className="h-28 flex items-center relative floating-cloud">
+              {/* Cloud SVG Background */}
               <svg 
-                width="120" 
-                height="70" 
+                width="200" 
+                height="110" 
                 viewBox="0 0 1080 625"
+                className="absolute"
                 style={{
-                  animation: 'float 3s ease-in-out infinite'
+                  left: '-20px',
+                  top: '50%',
+                  transform: 'translateY(-50%)'
                 }}
               >
                 <path 
                   fill="rgb(255,255,255)" 
                   fillOpacity="1" 
-                  d="M533.4696044921875,128.31903076171875 C528.5718383789062,210.188232421875 472.90899658203125,266.23199462890625 390.1319885253906,266.23199462890625 C343.12200927734375,266.23199462890625 301.1700134277344,244.5919952392578 273.7099914550781,210.71499633789062 C255.2050018310547,272.46600341796875 185.4952392578125,309.0014953613281 118.17196655273438,303.32098388671875 C51.19625473022461,296.7384033203125 10.297713279724121,254.84800720214844 -7.6106157302856445,204.95166015625 C-21.1815242767334,257.02496337890625 -53.372222900390625,306.5339660644531 -136.6733856201172,310.9396057128906 C-204.35389709472656,313.6692199707031 -255.2050018310547,272.46600341796875 -273.7099914550781,210.71499633789062 C-301.1700134277344,244.5919952392578 -343.12200927734375,266.23199462890625 -390.1319885253906,266.23199462890625 C-472.90899658203125,266.23199462890625 -540,199.12451171875 -540,116.34751892089844 C-540,34.48251724243164 -474.3349914550781,-32.077999114990234 -392.7850036621094,-33.48699951171875 C-417.19830322265625,-59.262359619140625 -431.2546691894531,-97.11054992675781 -432.21209716796875,-122.61190795898438 C-435.5191650390625,-208.0864715576172 -363.3871765136719,-290.0140380859375 -267.6512451171875,-282.8193359375 C-213.3513641357422,-278.6711730957031 -155.70372009277344,-252.30523681640625 -138.5433807373047,-194.3686065673828 C-123.40390014648438,-261.12762451171875 -60.13972854614258,-304.10833740234375 10.331439018249512,-296.24676513671875 C77.44377899169922,-289.1197814941406 136.20774841308594,-231.31182861328125 130.9082794189453,-166.59849548339844 C150.2538604736328,-211.4908447265625 202.20082092285156,-240.4938201904297 258.9449157714844,-236.0199432373047 C341.3683166503906,-230.5297088623047 395.207763671875,-169.4733123779297 395.207763671875,-86.69631958007812 C395.207763671875,-61.160316467285156 388.8237609863281,-37.11631774902344 377.5477600097656,-16.07331657409668 C465.2915954589844,-24.473342895507812 538.385009765625,46.740440368652344 533.4696044921875,128.31903076171875z"
+                  d="M534.3162231445312,126.76692962646484 C530.0534057617188,208.75381469726562 472.90899658203125,266.23199462890625 390.1319885253906,266.23199462890625 C343.12200927734375,266.23199462890625 301.1700134277344,244.5919952392578 273.7099914550781,210.71499633789062 C255.2050018310547,272.46600341796875 187.1074676513672,310.099365234375 119.72406768798828,305.15533447265625 C54.2103157043457,299.4261169433594 12.310864448547363,259.0260314941406 -6.6229071617126465,209.74905395507812 C-21.783653259277344,260.9207763671875 -56.10405349731445,307.9517517089844 -135.82676696777344,311.7862243652344 C-203.5210723876953,314.1619567871094 -255.2050018310547,272.46600341796875 -273.7099914550781,210.71499633789062 C-301.1700134277344,244.5919952392578 -343.12200927734375,266.23199462890625 -390.1319885253906,266.23199462890625 C-472.90899658203125,266.23199462890625 -540,199.12445068359375 -540,116.34745025634766 C-540,34.48244857788086 -474.3349914550781,-32.077999114990234 -392.7850036621094,-33.48699951171875 C-415.4951171875,-58.64883804321289 -428.55682373046875,-94.70738983154297 -429.39013671875,-120.21324920654297 C-432.2684631347656,-205.3380889892578 -360.7900085449219,-285.3421936035156 -266.7341003417969,-279.0802307128906 C-213.5276336669922,-275.4698486328125 -158.02879333496094,-249.85000610351562 -139.53109741210938,-195.21524047851562 C-124.39154052734375,-261.9742431640625 -61.590091705322266,-305.8406066894531 8.990991592407227,-298.99822998046875 C76.6509017944336,-292.79522705078125 135.5354461669922,-236.02169799804688 132.88363647460938,-171.0431365966797 C153.2832794189453,-214.3268280029297 203.82061767578125,-242.24195861816406 259.156494140625,-238.3480987548828 C341.625732421875,-233.56964111328125 397.1831970214844,-171.73089599609375 397.1831970214844,-88.95389556884766 C397.1831970214844,-63.41790008544922 390.7991943359375,-39.373897552490234 379.523193359375,-18.33089828491211 C466.4640197753906,-25.45924186706543 538.5943603515625,45.15120315551758 534.3162231445312,126.76692962646484z"
                 />
               </svg>
-              <style>{`
-                @keyframes float {
-                  0%, 100% { transform: translateY(0px) scale(1); }
-                  50% { transform: translateY(-8px) scale(1.02); }
-                }
-              `}</style>
+              {/* Text Overlay */}
+              <div className="relative z-10 flex flex-col items-center" style={{ marginLeft: '30px' }}>
+                <span className="text-black font-black text-4xl tracking-tight" style={{ letterSpacing: '-0.074em' }}>
+                  raix
+                </span>
+                <span className="text-black font-bold text-[10px] uppercase tracking-normal mt-[-4px]">
+                  (Cyber & AI consultancy)
+                </span>
+              </div>
             </div>
           </div>
           <nav className="hidden md:flex items-center gap-8">
@@ -150,7 +157,7 @@ export default function Home() {
               </p>
             </div>
             <div className="order-1 md:order-2">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-8 leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-black mb-8 leading-tight">
                 Empowering Australian Businesses with Copilot Studio & Cybersecurity Expertise
               </h1>
             </div>
@@ -161,7 +168,7 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-16">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">About RAIX</h2>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">About RAIX</h2>
           <p className="text-white text-lg leading-relaxed">
             With over 25 years of experience in IT, RAIX helps Australian businesses harness the
             power of Microsoft Copilot Studio and modern cybersecurity. Passionate about making
@@ -173,7 +180,7 @@ export default function Home() {
       {/* Services Section */}
       <section id="services" className="py-16">
         <div className="container">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-black mb-12 text-center">
             My Services
           </h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -235,7 +242,7 @@ export default function Home() {
       {/* Why Me Section */}
       <section id="why-me" className="py-16">
         <div className="container max-w-4xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-8">
             Why Work With a Dedicated Consultant?
           </h2>
           <ul className="space-y-4 text-white text-lg">
@@ -258,100 +265,84 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-16">
         <div className="container max-w-2xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-8 text-center">
             Get in Touch
           </h2>
           <Card className="bg-card">
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
-                {/* Honeypot for spam protection */}
-                <input type="checkbox" name="botcheck" style={{ display: "none" }} />
                 <div>
-                  <label htmlFor="name" className="block text-card-foreground font-semibold mb-2">
-                    Name
-                  </label>
                   <Input
-                    id="name"
                     type="text"
-                    required
+                    placeholder="Name"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="bg-white border-border"
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    required
+                    className="bg-white"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-card-foreground font-semibold mb-2">
-                    Email
-                  </label>
                   <Input
-                    id="email"
                     type="email"
-                    required
+                    placeholder="Email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="bg-white border-border"
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    required
+                    className="bg-white"
                   />
                 </div>
                 <div>
-                  <label
-                    htmlFor="message"
-                    className="block text-card-foreground font-semibold mb-2"
-                  >
-                    Message
-                  </label>
                   <Textarea
-                    id="message"
-                    required
-                    rows={5}
+                    placeholder="Message"
                     value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    className="bg-white border-border"
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    required
+                    className="min-h-[150px] bg-white"
                   />
                 </div>
                 <Button
                   type="submit"
+                  className="w-full"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
               </form>
             </CardContent>
           </Card>
+          <div className="mt-8 flex justify-center gap-6">
+            <a
+              href="mailto:roberto@raix.au"
+              className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
+            >
+              <Mail className="w-5 h-5" />
+              <span>roberto@raix.au</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/roberto-martinez-b2b48b18/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
+            >
+              <Linkedin className="w-5 h-5" />
+              <span>LinkedIn</span>
+            </a>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t border-white/20">
+      <footer className="py-8 border-t border-white/20">
         <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex gap-6">
-              <a
-                href="mailto:contact@raix.example.com"
-                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
-              >
-                <Mail className="w-5 h-5" />
-                <span>Email</span>
-              </a>
-              <a
-                href="https://www.linkedin.com/in/yourprofile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
-              >
-                <Linkedin className="w-5 h-5" />
-                <span>LinkedIn</span>
-              </a>
-            </div>
-            <div className="flex gap-6 text-white/80 text-sm">
-              <a href="#" className="hover:text-white transition-colors">
-                Terms & Support
-              </a>
-              <a href="#" className="hover:text-white transition-colors">
-                Privacy Policy
-              </a>
-            </div>
-          </div>
+          <p className="text-center text-white/60">
+            © {new Date().getFullYear()} RAIX. All rights reserved.
+          </p>
         </div>
       </footer>
     </div>
