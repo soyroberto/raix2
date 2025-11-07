@@ -170,3 +170,17 @@
     }
   }
 }
+
+/* Cloud floating animation for logo */
+.floating-cloud {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) scale(1); 
+  }
+  50% { 
+    transform: translateY(-8px) scale(1.02); 
+  }
+}
